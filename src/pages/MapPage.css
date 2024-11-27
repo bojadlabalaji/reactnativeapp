@@ -1,0 +1,121 @@
+.custom-marker {
+  background: none;
+  border: none;
+}
+
+.marker-wrapper {
+  position: relative;
+}
+
+.marker-content {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.marker-pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: #dc2626;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+}
+
+.marker-image {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.profile-popup {
+  position: absolute;
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  z-index: 999999;
+  pointer-events: none;
+  left: 30px;
+  top: -100px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  min-width: 200px;
+}
+
+.marker-wrapper:hover .profile-popup {
+  opacity: 1;
+  visibility: visible;
+}
+
+.profile-popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-popup-content img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+}
+
+.profile-popup-content h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.25rem 0;
+  color: #111827;
+}
+
+.profile-popup-content p {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0.25rem 0;
+}
+
+.profile-popup-content .location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.dark .profile-popup {
+  background: #1f2937;
+}
+
+.dark .profile-popup-content h3 {
+  color: white;
+}
+
+.dark .profile-popup-content p,
+.dark .profile-popup-content .location {
+  color: #9ca3af;
+}
+
+/* Add hover effect for marker */
+.marker-wrapper:hover .marker-pin {
+  transform: rotate(-45deg) scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.marker-wrapper:hover .marker-image {
+  transform: translate(-50%, -50%) scale(1.1);
+  transition: transform 0.2s ease-in-out;
+} 

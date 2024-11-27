@@ -1,0 +1,98 @@
+/* Hero section styles */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Character Animation Positions */
+.flying-ironman {
+    position: absolute;
+    bottom: 50%;
+    left: -150px;
+    animation: fly 5s linear infinite;
+    z-index: 20;
+}
+
+.running-cap {
+    position: absolute;
+    bottom: -2%;
+    left: -150px;
+    animation: run 4s linear infinite;
+    z-index: 20;
+}
+
+.floating-wanda {
+    position: absolute;
+    bottom: 30%;
+    left: 150px;
+    animation: float 6s ease-in-out infinite;
+    z-index: 20;
+}
+
+/* Animation Keyframes */
+@keyframes run {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(99vw, 0);
+    }
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(1vw, 220px) rotate(45deg);
+    }
+    100% {
+        transform: translate(99vw, -50px) rotate(45deg);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, -100px);
+    }
+    50% {
+        transform: translate(0, -80px);
+    }
+    100% {
+        transform: translate(0, -100px);
+    }
+}
+
+/* Hero content styles */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero-subtitle {
+    margin-top: 1rem;
+    opacity: 0.9;
+}
+
+/* Ensure GIFs are properly sized */
+.flying-ironman img,
+.running-cap img,
+.floating-wanda img {
+    width: 150px;
+    height: auto;
+}
+
+/* Optional: Add smooth transitions when animations restart */
+.flying-ironman,
+.running-cap,
+.floating-wanda {
+    animation-fill-mode: both;
+}
+
+/* Dark mode adjustments */
+.dark .hero-subtitle {
+    color: #e5e7eb;
+} 
